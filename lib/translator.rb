@@ -23,7 +23,7 @@ def get_english_meaning(file, emoticon)
     end
   end
   if english_meaning == nil
-    "Sorry, that emoticon was not found."
+    "Sorry, that emoticon was not found"
   else 
     english_meaning
   end
