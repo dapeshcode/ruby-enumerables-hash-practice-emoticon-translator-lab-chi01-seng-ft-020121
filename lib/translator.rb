@@ -14,6 +14,11 @@ def load_library(file)
   hash
 end
 
+
+
+
+
+
 def get_japanese_emoticon(file, emoticon)
   load_library(file)
   japanese_emoticon = nil
@@ -25,13 +30,5 @@ def get_japanese_emoticon(file, emoticon)
       
 end
 
-def get_english_meaning(file, emoticon)
-  load_library(file)
-  
-  hash.map do |key, value|
-    if hash[key][:english] == emoticon
-      key
-    end
-  end
-end
+
 
