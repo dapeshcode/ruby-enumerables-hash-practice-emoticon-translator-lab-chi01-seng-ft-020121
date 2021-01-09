@@ -14,7 +14,15 @@ def load_library(file)
   hash
 end
 
-
+def get_english_meaning(file, emoticon)
+  load_library(file)
+  
+  hash.each do |key, value|
+    if hash[key][:english] == emoticon
+      key
+    end
+  end
+end
 
 
 
