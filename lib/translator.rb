@@ -39,7 +39,11 @@ def get_japanese_emoticon(file, emoticon)
       japanese_emoticon = hash[key][:japanese]
     end
   end
-  japanese_emoticon    
+  if japanese_emoticon == nil
+    "Sorry, that emoticon was not found"
+  else 
+    japanese_emoticon
+  end 
 end
 
 
