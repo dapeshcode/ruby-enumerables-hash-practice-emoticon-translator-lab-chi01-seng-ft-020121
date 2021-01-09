@@ -16,10 +16,10 @@ end
 
 def get_japanese_emoticon(file, emoticon)
   load_library(file)
-  
-  hash.map do |key, value|
+  japanese_emoticon = nil
+  hash.each do |key, value|
     if hash[key][:english] == emoticon
-      hash[key][:japanese]
+      japanese_emoticon = hash[key][:japanese]
     end
   end
       
