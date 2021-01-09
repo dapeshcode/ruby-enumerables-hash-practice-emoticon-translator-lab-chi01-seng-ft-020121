@@ -36,7 +36,7 @@ def get_japanese_emoticon(file, emoticon)
       japanese_emoticon = hash[key][:japanese]
     end
   end
-      
+  japanese_emoticon    
 end
 
 
