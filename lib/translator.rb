@@ -19,7 +19,7 @@ def get_english_meaning(file, emoticon)
   english_meaning = nil
   hash.each do |key, value|
     if hash[key][:japanese] == emoticon
-      key
+      english_meaning = key
     end
   end
 end
