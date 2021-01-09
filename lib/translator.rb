@@ -1,13 +1,50 @@
-# require modules here
+require 'pry'
+require 'yaml'
 
-def load_library
-  # code goes here
+def load_library(file)
+  hash = YAML.load_file(file)
+  
+  hash.map do |key, value|
+    hash[key] = {
+      :english => value[0],
+      :japanese => value[1]
+    }
+      
+  end
+  hash
 end
 
-def get_japanese_emoticon
-  # code goes here
+def get_english_meaning(file, emoticon)
+  hash = load_library(file)
+  english_meaning = nil
+  hash.each do |key, value|
+    if hash[key][:japanese] == emoticon
+      english_meaning = key
+    end
+  end
+  if english_meaning == nil
+    "Sorry, that emoticon was not found"
+  else 
+    english_meaning
+  end
 end
 
-def get_english_meaning
-  # code goes here
+
+
+def get_japanese_emoticon(file, emoticon)
+  hash = load_library(file)
+  japanese_emoticon = nil
+  hash.each do |key, value|
+    if hash[key][:english] == emoticon
+      japanese_emoticon = hash[key][:japanese]
+    end
+  end
+  if japanese_emoticon == nil
+    "Sorry, that emoticon was not found"
+  else 
+    japanese_emoticon
+  end 
 end
+
+
+
