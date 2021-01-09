@@ -22,7 +22,11 @@ def get_english_meaning(file, emoticon)
       english_meaning = key
     end
   end
-  english_meaning
+  if english_meaning == nil
+    "Sorry this emoticon is not recognized."
+  else 
+    english_meaning
+  end
 end
 
 
